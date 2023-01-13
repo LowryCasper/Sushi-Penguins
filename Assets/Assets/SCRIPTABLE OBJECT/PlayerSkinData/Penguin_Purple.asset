@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b584453932472408183bec15a88c31, type: 3}
+  m_Name: Penguin_Purple
+  m_EditorClassIdentifier: 
+  skinName: Penguin Purple
+  skinImage: {fileID: 4476710238951509455, guid: 8b0a97f0a6632d04782f77162f302bab, type: 3}
+  skinPrice: 600
+  isunlocked: 0

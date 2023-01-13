@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b584453932472408183bec15a88c31, type: 3}
+  m_Name: Penguin_Green
+  m_EditorClassIdentifier: 
+  skinName: Penguin Green
+  skinImage: {fileID: 4449953909884717849, guid: 4f67a1566553e8c40805ad9e39500634, type: 3}
+  skinPrice: 350
+  isunlocked: 1
