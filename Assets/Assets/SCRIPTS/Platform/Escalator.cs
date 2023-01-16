@@ -57,9 +57,6 @@ public class Escalator : MonoBehaviour
     }
   
 
-    public void autoMove()
-    {
-        player.transform.Translate(Vector2.right * Time.deltaTime * escalatorSpeed);
-    }
+  
 }
 
