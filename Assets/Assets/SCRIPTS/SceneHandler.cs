@@ -42,6 +42,11 @@ public class SceneHandler : MonoBehaviour
 
     }
 
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 
     public void LoadLevel(int sceneIndex)
     {

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public static event Action OnGameWIn;
 
+    public GameObject timer;
   
 
     public LevelManager levelManager;
@@ -83,7 +84,7 @@ public class GameManager : MonoBehaviour
     IEnumerator WinningStage()
     {
         //Stop all movement after seconds of winning the stage
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         Time.timeScale = 0;
     }
 
