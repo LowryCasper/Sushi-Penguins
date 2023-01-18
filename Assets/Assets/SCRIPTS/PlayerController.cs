@@ -7,7 +7,7 @@ public  class PlayerController : MonoBehaviour
   
     Rigidbody2D rb;
     public float jumpPower = 9;
-
+    public GameObject player;
     public Transform groundCheck;
     public LayerMask groundLayer;
     bool isGrounded;
@@ -19,7 +19,7 @@ public  class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+        player = GameObject.FindWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         
     }
@@ -34,9 +34,12 @@ public  class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
 
         transform.Translate(Vector2.right * Time.deltaTime * speed * horizontalInput);
-       // transform.Translate(Vector2.left * Time.deltaTime * speed * horizontalInput);
+        // transform.Translate(Vector2.left * Time.deltaTime * speed * horizontalInput);
 
-
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+          player.transform.parent = null;
+        }
     }
 
     public void Jump(float jumpPower)
