@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
 
     public int targetScore;
 
+    public float currentScorePercentage;
+    public int starCollected;
+
     public GameObject winStageUI;
     public GameObject gameOverUI;
     private Coroutine winningStageCoroutine;
@@ -55,9 +58,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        CalculatePercentage();
         LevelCompleted();
-
+        UpdateStarCollected();
 
     }
 
@@ -107,6 +110,25 @@ public class GameManager : MonoBehaviour
         winStageUI.SetActive(true);
     }
 
+    public void CalculatePercentage()
+    {
+        currentScorePercentage = (int)((float)score / targetScore * 100);
+    }
 
+    public void UpdateStarCollected()
+    {
+        switch (currentScorePercentage)
+        {
+            case float n when (n < 30):
+                starCollected = 1;
+                break;
+            case float n when (n >= 30 && n <= 66):
+                starCollected = 2;
+                break;
+            default:
+                starCollected = 3;
+                break;
+        }
+    }
 
 }

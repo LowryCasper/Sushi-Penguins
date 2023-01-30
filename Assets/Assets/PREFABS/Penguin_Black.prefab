@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7012764618529296591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1043919599926725791}
   - component: {fileID: 3199274816164570347}
   - component: {fileID: -7685283998264944021}
-  - component: {fileID: 6276499808126996642}
+  - component: {fileID: 5745665672173350066}
   m_Layer: 7
   m_Name: Penguin_Black
   m_TagString: Player
@@ -166,7 +166,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!114 &6276499808126996642
+--- !u!114 &5745665672173350066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpPower: 6.5
+  player: {fileID: 6622299835246140660}
   groundCheck: {fileID: 7012764618529296591}
   groundLayer:
     serializedVersion: 2

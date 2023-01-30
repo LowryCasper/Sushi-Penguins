@@ -61,7 +61,7 @@ public  class PlayerController : MonoBehaviour
 
     public void MouseTouch()
     {
-        if (Input.GetMouseButton(0) && isGrounded)
+        if (Input.GetMouseButton(0) )
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
 

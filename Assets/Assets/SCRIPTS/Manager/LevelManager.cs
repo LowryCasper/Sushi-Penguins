@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager instance;
+    public static LevelManager _instance;
     public int targetWin;
     public int nextLevel;
     public int currentLevelPlayIndex;
@@ -17,8 +17,11 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        
 
+        if (_instance == null)
+            _instance = this;
+        else
+            Destroy(gameObject);
     }
 
    
@@ -28,7 +31,7 @@ public class LevelManager : MonoBehaviour
         currentLevelPlayIndex = PlayerPrefs.GetInt("LevelSelected", currentLevelPlayIndex);
 
         //the data comes from levelscompleteSO. each level has different value from each SO
-        instance = this;
+        _instance = this;
         targetWin = levelCompleteSO[currentLevelPlayIndex].sushiToWin;
 
         //check if the scene is level gameplay only, then instantiate the level prefab

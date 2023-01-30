@@ -45,7 +45,7 @@ public  class StageManager : MonoBehaviour
 
             if (i + 1 > levelReached)
             {
-                stageButton[i].interactable = false;
+                stageButton[i].interactable = true;
             }
 
 
