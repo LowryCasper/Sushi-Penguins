@@ -2633,9 +2633,15 @@ GameObject:
   m_StaticEditorFlags: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_IsActive: 0
 --- !u!70 &966225303
 CapsuleCollider2D:
+=======
+  m_IsActive: 1
+--- !u!4 &958561798
+Transform:
+>>>>>>> parent of 692d1f0 (create directional fan)
 =======
   m_IsActive: 1
 --- !u!4 &958561798
