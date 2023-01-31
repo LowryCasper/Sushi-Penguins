@@ -17,6 +17,7 @@ public class SaveManager : MonoBehaviour
     public static SaveManager instance;
     public SaveData saveData;
     public int numberOfStages;
+    public int numberOfStagesStars;
     public int stageIndex;
     private string savePath;
 
@@ -42,7 +43,7 @@ public class SaveManager : MonoBehaviour
             Save();
 
             saveData.completedStars = new List<int>();
-            for (int i = 0; i < numberOfStages; i++)
+            for (int i = 0; i < numberOfStagesStars; i++)
             {
                 saveData.completedStars.Add(stars);
             }
@@ -58,12 +59,15 @@ public class SaveManager : MonoBehaviour
     }
     private void Update()
     {
+        if(GameManager.instance.gameWin)
+        stars = GameManager.instance.StarCollected;
         //DeleteSaveData();
     }
 
     public void CompleteStage(int stageIndex)
     {
         saveData.completedStages[stageIndex] = true;
+        saveData.completedStars[stageIndex] = stars;
         Save();
     }
 

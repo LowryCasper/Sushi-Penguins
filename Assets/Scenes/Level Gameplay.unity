@@ -2815,6 +2815,7 @@ MonoBehaviour:
     completedStages: 00000000000000000000
     completedStars: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   numberOfStages: 10
+  numberOfStagesStars: 10
   stageIndex: 0
   stars: 0
 --- !u!4 &1177787232
