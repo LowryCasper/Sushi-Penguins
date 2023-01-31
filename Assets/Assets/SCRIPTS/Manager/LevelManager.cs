@@ -17,19 +17,19 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        
-
-    }
-
-   
-    void Start()
-    {
         //set the index of new level being instantiated. this index comes from each button stage selected
         currentLevelPlayIndex = PlayerPrefs.GetInt("LevelSelected", currentLevelPlayIndex);
 
         //the data comes from levelscompleteSO. each level has different value from each SO
         instance = this;
         targetWin = levelCompleteSO[currentLevelPlayIndex].sushiToWin;
+
+    }
+
+   
+    void Start()
+    {
+       
 
         //check if the scene is level gameplay only, then instantiate the level prefab
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Level Gameplay")

@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public bool gameWin = false;
 
     public int targetScore;
+    public float scorePercentage;
+    public int StarCollected;
 
     public GameObject winStageUI;
     public GameObject gameOverUI;
@@ -42,29 +44,28 @@ public class GameManager : MonoBehaviour
 
 
     }
-        void Start()
+      public  void Start()
     {
-       instance = this;
 
-        currentLevelIndex = levelManager.currentLevelPlayIndex;
-        targetScore = levelManager.levelCompleteSO[currentLevelIndex].sushiToWin;
 
-     
+        currentLevelIndex = LevelManager.instance.currentLevelPlayIndex;
+        targetScore = LevelManager.instance.targetWin;
+        
+
     }
 
     // Update is called once per frame
-    void Update()
+   public void Update()
     {
-
+        CalculateScorePercentage();
         LevelCompleted();
-
+        GetStarRequirement();
 
     }
 
     public void WinStage()
     {
-       
-        
+      
             
              Invoke("ActivateWinUI", 0.3f);
 
@@ -76,8 +77,7 @@ public class GameManager : MonoBehaviour
 
       
          gameWin = false;
-      
-
+     
 
     }
 
@@ -106,7 +106,30 @@ public class GameManager : MonoBehaviour
     {
         winStageUI.SetActive(true);
     }
+     
+    public void CalculateScorePercentage()
+    {
+        scorePercentage = (int)((float)score/ targetScore * 100);
+    }
 
+    public void GetStarRequirement()
+    {
+        
+          
+            switch (scorePercentage)
+            {
+                case var p when p < 30:
+                StarCollected = 1;
+                    break;
+                case var p when p >= 30 && p <= 66:
+                StarCollected = 2;
+                    break;
+                default:
+                StarCollected = 3;
+                    break;
+            }
+           
+        
 
-
+    }
 }

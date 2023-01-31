@@ -8,6 +8,8 @@ using System.IO;
 public class SaveData
 {
     public List<bool> completedStages;
+
+    public List<int> completedStars;
    
 }
 public class SaveManager : MonoBehaviour
@@ -17,6 +19,8 @@ public class SaveManager : MonoBehaviour
     public int numberOfStages;
     public int stageIndex;
     private string savePath;
+
+    public int stars;
 
    
 
@@ -36,6 +40,15 @@ public class SaveManager : MonoBehaviour
                 saveData.completedStages.Add(false);
             }
             Save();
+
+            saveData.completedStars = new List<int>();
+            for (int i = 0; i < numberOfStages; i++)
+            {
+                saveData.completedStars.Add(stars);
+            }
+            Save();
+
+
         }
         else
         {
@@ -45,7 +58,7 @@ public class SaveManager : MonoBehaviour
     }
     private void Update()
     {
-        DeleteSaveData();
+        //DeleteSaveData();
     }
 
     public void CompleteStage(int stageIndex)
@@ -66,17 +79,17 @@ public class SaveManager : MonoBehaviour
         saveData = JsonUtility.FromJson<SaveData>(json);
     }
 
-    public void DeleteSaveData()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            File.Delete(savePath);
+   // public void DeleteSaveData()
+   // {
+       // if (Input.GetKeyDown(KeyCode.R))
+       // {
+           // File.Delete(savePath);
 
 
-            Debug.Log("Reset Saved Data");
-        }
+          //  Debug.Log("Reset Saved Data");
+       // }
       
-    }
+  //  }
 
  
 

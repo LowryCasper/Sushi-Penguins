@@ -22,8 +22,8 @@ public class SoundSetting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bgmSource = GameObject.Find("BGM").GetComponent<AudioSource>();
-        sfxSource = GameObject.Find("SFX").GetComponent<AudioSource>();
+        //bgmSource = GameObject.Find("BGM").GetComponent<AudioSource>();
+        //sfxSource = GameObject.Find("SFX").GetComponent<AudioSource>();
         // Load saved mute values from PlayerPrefs
         bgmSource.mute = PlayerPrefs.GetInt(BGM_MUTE_KEY, 0) == 1 ? true : false;
         sfxSource.mute = PlayerPrefs.GetInt(SFX_MUTE_KEY, 0) == 1 ? true : false;
@@ -56,8 +56,10 @@ public class SoundSetting : MonoBehaviour
            
             Debug.Log("AudioSetting is Saved");
 
-            PlayerPrefs.SetInt(muteKey, audioSource.mute ? 1 : 0);
-            PlayerPrefs.SetInt(toggleKey, toggle.isOn ? 1 : 0);
+            PlayerPrefs.SetInt(BGM_MUTE_KEY, audioSource.mute ? 1 : 0);
+            PlayerPrefs.SetInt(SFX_MUTE_KEY, audioSource.mute ? 1 : 0);
+            PlayerPrefs.SetInt(BGM_TOGGLE_KEY, toggle.isOn ? 1 : 0);
+            PlayerPrefs.SetInt(SFX_TOGGLE_KEY, toggle.isOn ? 1 : 0);
             PlayerPrefs.Save();
         
       
