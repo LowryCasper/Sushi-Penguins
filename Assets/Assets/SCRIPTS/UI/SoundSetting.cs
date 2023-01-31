@@ -69,4 +69,8 @@ public class SoundSetting : MonoBehaviour
         setting.SetActive(false);
     }
      
+    public void OpenSetting()
+    {
+        setting.SetActive(true);
+    }
 }
